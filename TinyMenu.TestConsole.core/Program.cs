@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace TinyMenu.TestConsole.core
 {
@@ -6,7 +7,14 @@ namespace TinyMenu.TestConsole.core
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tiny.Menu("Main")
+                ._("Foo", () => { Console.WriteLine("Foo"); Thread.Sleep(1000); })
+                ._("Bar", () => { Console.WriteLine("Bar"); Thread.Sleep(1000); })
+                ._(
+                    Tiny.Menu("Sub")
+                    ._("SubItem", () => { Console.WriteLine("SubItem"); Thread.Sleep(1000); })
+                )
+                .Show();
         }
     }
 }

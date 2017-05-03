@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace TinyMenu.TestConsole.net
 {
@@ -10,6 +7,14 @@ namespace TinyMenu.TestConsole.net
     {
         static void Main(string[] args)
         {
+            Tiny.Menu("Main")
+                ._("Foo", () => { Console.WriteLine("Foo"); Thread.Sleep(1000); })
+                ._("Bar", () => { Console.WriteLine("Bar"); Thread.Sleep(1000); })
+                ._(
+                    Tiny.Menu("Sub")
+                    ._("SubItem", () => { Console.WriteLine("SubItem"); Thread.Sleep(1000); })
+                )
+                .Show();
         }
     }
 }

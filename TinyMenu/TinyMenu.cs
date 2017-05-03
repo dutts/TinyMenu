@@ -59,9 +59,9 @@ namespace TinyMenu
         }
     }
 
-    public static class CLI
+    public static class Tiny
     {
-        public static TinyMenu M(string name = null)
+        public static TinyMenu Menu(string name = null)
         {
             return new TinyMenu(name);
         }
