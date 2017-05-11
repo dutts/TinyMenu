@@ -6,6 +6,6 @@ before_build:
 build:
  project: TinyMenu.sln
 after_build:
- - dotnet pack "TinyMenu\TinyMenu.csproj"
+ - dotnet pack "TinyMenu\TinyMenu.csproj" -Version %APPVEYOR_BUILD_VERSION%
 artifacts:
  - path: '**\TinyMenu.*.nupkg'
