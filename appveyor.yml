@@ -7,7 +7,7 @@ build:
  project: TinyMenu.sln
  publish_nuget: true
 after_build:
- - dotnet pack /p:PackageVersion=%APPVEYOR_BUILD_VERSION% "TinyMenu\TinyMenu.csproj"
+ - dotnet pack "TinyMenu\TinyMenu.csproj"
 artifacts:
  - path: '**\TinyMenu.*.nupkg'
 deploy:
