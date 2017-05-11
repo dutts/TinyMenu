@@ -5,7 +5,7 @@ before_build:
  - dotnet restore
 build:
  project: TinyMenu.sln
- public_nuget: true
+ publish_nuget: true
 after_build:
  - dotnet pack /p:PackageVersion=%APPVEYOR_BUILD_VERSION% "TinyMenu\TinyMenu.csproj"
 artifacts:
