@@ -4,6 +4,8 @@
 
 A tiny console menu builder for C#, supports .Net Framework and Standard.
 
+![Stats](https://buildstats.info/appveyor/chart/dutts/tinymenu)
+
 ## Usage
 
 ```csharp
@@ -18,3 +20,4 @@ Tiny.Menu("Main")
 ```
 https://www.nuget.org/packages/TinyMenu/
 
+![nuget](https://buildstats.info/nuget/tinymenu)
