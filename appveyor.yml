@@ -1,7 +1,11 @@
-version: 1.0.{build}
+version: 1.0.0.{build}
 image: Visual Studio 2017
 install:
 - cmd: >-
     dotnet restore
 build:
-  verbosity: minimal
+- dotnet build "TinyMenu\TinyMenu.csproj"
+after_build:
+- dotnet pack "TinyMenu\TinyMenu.csproj"
+artifacts:
+- path 'TinyMenu.*.nupkg'
