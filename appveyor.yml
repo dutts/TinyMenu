@@ -3,7 +3,7 @@ image: Visual Studio 2017
 before_build:
  - dotnet restore
 build:
- - dotnet build "TinyMenu\TinyMenu.csproj"
+ project: TinyMenu.sln
 after_build:
  - dotnet pack "TinyMenu\TinyMenu.csproj"
 artifacts:
